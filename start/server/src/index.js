@@ -27,6 +27,10 @@ const server = new ApolloServer({
   
   typeDefs,
 
+  engine: {
+    apiKey: process.env.ENGINE_API_KEY
+  },
+
   resolvers,
   dataSources: () => ({
     launchAPI: new LaunchAPI(),
